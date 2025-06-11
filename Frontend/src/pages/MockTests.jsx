@@ -128,12 +128,12 @@ const MockTests = () => {
         <Typography
           variant="h6"
           color="text.secondary"
-          sx={{ mb: 6, textAlign: 'center', maxWidth: '600px', mx: 'auto' }}
+          sx={{ mb: 6, textAlign: 'center', maxWidth: '800px', mx: 'auto' }}
         >
           Practice with our comprehensive mock tests designed to help you excel in your language proficiency exams
         </Typography>
 
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 4, maxWidth: '800px', mx: 'auto' }}>
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
@@ -160,9 +160,9 @@ const MockTests = () => {
           </Tabs>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {filteredTests.map((test, index) => (
-            <Grid item xs={12} md={6} key={test.id}>
+            <Grid item xs={12} md={6} key={test.id} sx={{ maxWidth: { md: '600px' } }}>
               <MotionBox
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

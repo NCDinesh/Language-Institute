@@ -127,14 +127,14 @@ const Instructors = () => {
         <Typography
           variant="h6"
           color="text.secondary"
-          sx={{ mb: 6, textAlign: 'center', maxWidth: '600px', mx: 'auto' }}
+          sx={{ mb: 6, textAlign: 'center', maxWidth: '800px', mx: 'auto' }}
         >
           Learn from experienced language experts who are passionate about teaching
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {instructors.map((instructor, index) => (
-            <Grid item xs={12} md={6} key={instructor.id}>
+            <Grid item xs={12} md={6} key={instructor.id} sx={{ maxWidth: { md: '600px' } }}>
               <MotionBox
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

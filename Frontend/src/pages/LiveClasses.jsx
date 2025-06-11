@@ -147,7 +147,7 @@ const LiveClasses = () => {
         Live Classes
       </Typography>
 
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 4 }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 4, maxWidth: '800px', mx: 'auto' }}>
         <Tabs
           value={activeTab}
           onChange={handleTabChange}
@@ -162,9 +162,9 @@ const LiveClasses = () => {
         </Tabs>
       </Box>
 
-      <Grid container spacing={4}>
+      <Grid container spacing={4} justifyContent="center">
         {filteredClasses.map((classItem, index) => (
-          <Grid item xs={12} md={6} key={classItem.id}>
+          <Grid item xs={12} md={6} key={classItem.id} sx={{ maxWidth: { md: '600px' } }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

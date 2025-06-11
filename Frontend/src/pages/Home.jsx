@@ -65,100 +65,165 @@ const Home = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
-          color: 'white',
-          py: { xs: 8, md: 12 },
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
+      {/* Language Learning Section */}
+      <Box sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Typography
+            variant="h2"
+            align="center"
+            sx={{
+              mb: 6,
+              background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontWeight: 'bold',
+            }}
+          >
+            Master Japanese & Korean Languages
+          </Typography>
+          
+          <Grid container spacing={4} justifyContent="center">
+            {/* Japanese Language Section */}
+            <Grid item xs={12} md={6} sx={{ maxWidth: { md: '600px' } }}>
               <MotionBox
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Typography
-                  variant="h1"
+                <Card
                   sx={{
-                    fontSize: { xs: '2.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    mb: 2,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    boxShadow: 3,
+                    transition: 'transform 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                    },
                   }}
                 >
-                  Master Japanese & Korean Languages
-                </Typography>
-                <Typography
-                  variant="h5"
-                  sx={{ mb: 4, opacity: 0.9 }}
-                >
-                  Expert-led courses, live classes, and comprehensive mock tests
-                </Typography>
-                <Stack
-                  direction={{ xs: 'column', sm: 'row' }}
-                  spacing={2}
-                >
-                  <Button
-                    component={Link}
-                    to="/courses"
-                    variant="contained"
-                    size="large"
+                  <CardMedia
+                    component="img"
+                    height="400"
+                    image="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&auto=format&fit=crop&q=80"
+                    alt="Japanese Language Learning"
                     sx={{
-                      bgcolor: 'white',
-                      color: 'primary.main',
-                      '&:hover': {
-                        bgcolor: 'grey.100',
-                      },
+                      objectFit: 'cover',
                     }}
-                  >
-                    Explore Courses
-                  </Button>
-                  <Button
-                    component={Link}
-                    to="/signup"
-                    variant="outlined"
-                    size="large"
-                    sx={{
-                      borderColor: 'white',
-                      color: 'white',
-                      '&:hover': {
-                        borderColor: 'white',
-                        bgcolor: 'rgba(255, 255, 255, 0.1)',
-                      },
-                    }}
-                  >
-                    Start Learning
-                  </Button>
-                </Stack>
+                  />
+                  <CardContent sx={{ flexGrow: 1, p: 4 }}>
+                    <Typography
+                      variant="h4"
+                      gutterBottom
+                      sx={{
+                        fontWeight: 700,
+                        color: theme.palette.primary.main,
+                        mb: 2,
+                      }}
+                    >
+                      Japanese Language
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ mb: 3, color: 'text.secondary' }}
+                    >
+                      Master Japanese with our comprehensive courses covering JLPT N5 to N1 levels. Learn from native speakers and certified instructors through interactive live classes and regular mock tests.
+                    </Typography>
+                    <Stack direction="row" spacing={2}>
+                      <Button
+                        component={Link}
+                        to="/courses?language=Japanese"
+                        variant="contained"
+                        size="large"
+                      >
+                        Explore Japanese Courses
+                      </Button>
+                      <Button
+                        component={Link}
+                        to="/signup"
+                        variant="outlined"
+                        size="large"
+                      >
+                        Start Learning
+                      </Button>
+                    </Stack>
+                  </CardContent>
+                </Card>
               </MotionBox>
             </Grid>
-            <Grid item xs={12} md={6}>
+
+            {/* Korean Language Section */}
+            <Grid item xs={12} md={6} sx={{ maxWidth: { md: '600px' } }}>
               <MotionBox
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
               >
-                <Box
-                  component="img"
-                  src="https://source.unsplash.com/random/600x400?language-learning"
-                  alt="Language Learning"
+                <Card
                   sx={{
-                    width: '100%',
-                    maxWidth: 600,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
                     borderRadius: 4,
+                    overflow: 'hidden',
                     boxShadow: 3,
+                    transition: 'transform 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                    },
                   }}
-                />
+                >
+                  <CardMedia
+                    component="img"
+                    height="400"
+                    image="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&auto=format&fit=crop&q=80"
+                    alt="Korean Language Learning"
+                    sx={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <CardContent sx={{ flexGrow: 1, p: 4 }}>
+                    <Typography
+                      variant="h4"
+                      gutterBottom
+                      sx={{
+                        fontWeight: 700,
+                        color: theme.palette.secondary.main,
+                        mb: 2,
+                      }}
+                    >
+                      Korean Language
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ mb: 3, color: 'text.secondary' }}
+                    >
+                      Excel in Korean with our TOPIK-focused courses. From beginner to advanced levels, our expert instructors will guide you through speaking, writing, and cultural understanding.
+                    </Typography>
+                    <Stack direction="row" spacing={2}>
+                      <Button
+                        component={Link}
+                        to="/courses?language=Korean"
+                        variant="contained"
+                        size="large"
+                        color="secondary"
+                      >
+                        Explore Korean Courses
+                      </Button>
+                      <Button
+                        component={Link}
+                        to="/signup"
+                        variant="outlined"
+                        size="large"
+                        color="secondary"
+                      >
+                        Start Learning
+                      </Button>
+                    </Stack>
+                  </CardContent>
+                </Card>
               </MotionBox>
             </Grid>
           </Grid>
@@ -174,9 +239,9 @@ const Home = () => {
         >
           Why Choose Us?
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {features.map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={4} key={index} sx={{ maxWidth: { md: '400px' } }}>
               <MotionBox
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -223,9 +288,9 @@ const Home = () => {
           >
             What Our Students Say
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {testimonials.map((testimonial, index) => (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={4} key={index} sx={{ maxWidth: { md: '400px' } }}>
                 <MotionBox
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

@@ -135,9 +135,9 @@ const Courses = () => {
         </Typography>
 
         {/* Filters */}
-        <Box sx={{ mb: 6 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+        <Box sx={{ mb: 6, maxWidth: '800px', mx: 'auto' }}>
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={12} md={4} sx={{ maxWidth: { md: '300px' } }}>
               <TextField
                 fullWidth
                 label="Search Courses"
@@ -146,7 +146,7 @@ const Courses = () => {
                 size="small"
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} sx={{ maxWidth: { md: '300px' } }}>
               <FormControl fullWidth size="small">
                 <InputLabel>Language</InputLabel>
                 <Select
@@ -160,7 +160,7 @@ const Courses = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} sx={{ maxWidth: { md: '300px' } }}>
               <FormControl fullWidth size="small">
                 <InputLabel>Level</InputLabel>
                 <Select
@@ -179,9 +179,9 @@ const Courses = () => {
         </Box>
 
         {/* Course Grid */}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} justifyContent="center">
           {filteredCourses.map((course, index) => (
-            <Grid item xs={12} sm={6} md={4} key={course.id}>
+            <Grid item xs={12} sm={6} md={4} key={course.id} sx={{ maxWidth: { sm: '400px', md: '400px' } }}>
               <MotionBox
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
